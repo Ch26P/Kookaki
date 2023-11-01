@@ -1,0 +1,163 @@
+
+
+@keyframes flowerTurn {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fade_in_1{
+	0% {
+		transform: translateY(-200px);
+	}
+	100% {
+		transform: translateY(0);
+		}
+	}
+
+
+	@keyframes fade_in_2{
+	0% {
+		transform: translateY(400px);
+	}
+	100% {
+		transform: translateY(0);
+		}
+	}
+
+    @keyframes fade_scroll_title{
+        0% {
+            transform: translateY(60px);
+        }
+        100% {
+            transform: translateY(0);
+            }
+    }
+
+    @keyframes fade_in_title_site{
+        0% {
+            transform: translateY(250px);
+        }
+        100% {
+            transform: translateY(0);
+            }
+        }
+        .title {
+        display: block;
+
+    span{
+      display: block;
+    }}
+.title-animation span {
+    animation:fade_scroll_title 1000ms ease-in-out;
+  }
+
+
+.site-main >section:not(.banner){
+    animation: fade_in_2 2500ms ;
+		 
+}
+ .banner{
+    animation:fade_in_1 2500ms ;
+    img{
+        animation:fade_in_title_site 2500ms;
+    }
+    
+}
+.story { 
+	h2{
+	  &::after {
+		animation: flowerTurn 10000ms  linear infinite;
+	  }
+	}
+	&__article{
+		&::after {
+			animation: flowerTurn 10000ms  linear infinite;
+		  }
+	}
+}
+#studio{
+	h2{display: block;
+		&:after{
+			animation:  flowerTurn 10000ms  linear infinite ;
+         
+		}
+		&:before{
+			animation: flowerTurn 10000ms  linear infinite;  
+		}
+    }
+    div{
+  	    height:224px;
+
+    }
+    
+}
+
+.oscars{
+    display: flex;
+    flex-direction: wrap;
+
+    align-items: center;
+    height: 200px;
+    margin-top: 200px;
+    h2{
+        position: relative;
+        background-image: url('/Koukaki/wp-content/themes/foce-child/assets/images/Rectangle 23.png');
+        width: 80%;
+        text-align: left;
+        display: block;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 53px;
+        letter-spacing: -0.02em;
+        margin: 50px 0 50px 50px;
+        padding: 42px 100px 80px 120px;
+        &::before {
+            content: url('/Koukaki/wp-content/themes/foce/assets/images/Sunflower.png');
+            position: absolute;
+            animation:  flowerTurn 10000ms  linear infinite ;
+            left: 0em;
+            bottom: 8em;
+        }
+        &::after {
+        content: url('/Koukaki/wp-content/themes/foce/assets/images/orchid.png');
+       position: absolute;
+       animation:  flowerTurn 10000ms  linear infinite ;
+        right: -13em;
+        bottom: 8em;
+    }}
+    &_img{
+        margin: 0 250px 0 0;
+
+    }}
+
+
+footer{animation: fade_in_2 2500ms ;
+	&:after{
+		animation:  flowerTurn 10000ms  linear infinite ;
+    }
+    &:before{
+        animation: flowerTurn 10000ms  linear infinite;  
+    }
+	ul{
+	&:after{
+		animation:  flowerTurn 10000ms  linear infinite ;
+    }
+    &:before{
+        animation: flowerTurn 10000ms  linear infinite;  
+    }
+	}
+}
+
+
+
+     
+
+
+
+
+
+
