@@ -1,11 +1,17 @@
-
+/*
+var(--speed):10000ms;
+var(--speed)2:5000ms;*/
+:root {
+    --speed: 10000ms;
+    
+  }
 
 @keyframes flowerTurn {
     from {
         transform: rotate(0deg);
     }
     to {
-        transform: rotate(360deg);
+        transform: rotate(380deg);
     }
 }
 
@@ -21,7 +27,7 @@
 
 	@keyframes fade_in_2{
 	0% {
-		transform: translateY(400px);
+		transform: translateY(600px);
 	}
 	100% {
 		transform: translateY(0);
@@ -30,7 +36,7 @@
 
     @keyframes fade_scroll_title{
         0% {
-            transform: translateY(60px);
+            transform: translateY(80px);
         }
         100% {
             transform: translateY(0);
@@ -62,35 +68,48 @@
 }
  .banner{
     animation:fade_in_1 2500ms ;
+    background-image: none;
+    &__logo{
+       position:absolute;
+       animation:fade_in_title_site 2s 300ms ,Parallaxe-effect 8s  infinite ease-in-out;
+     /*  opacity: 1;*/
+    }
+    &__video{
+        position:absolute;
+        opacity: 1;
+    }
     img{
-        animation:fade_in_title_site 2500ms;
+         width: auto;
+         max-width: 600px;
     }
     
 }
 .story { 
 	h2{
 	  &::after {
-		animation: flowerTurn 10000ms  linear infinite;
+		animation: flowerTurn var(--speed)  linear infinite;
+        animation-fill-mode: forwards;
 	  }
 	}
 	&__article{
 		&::after {
-			animation: flowerTurn 10000ms  linear infinite;
+			animation: flowerTurn var(--speed)  linear infinite;
+            animation-fill-mode: forwards;
 		  }
 	}
 }
 #studio{
 	h2{display: block;
 		&:after{
-			animation:  flowerTurn 10000ms  linear infinite ;
+			animation:  flowerTurn var(--speed)  linear infinite ;
          
 		}
 		&:before{
-			animation: flowerTurn 10000ms  linear infinite;  
+			animation: flowerTurn var(--speed)  linear infinite;  
 		}
     }
     div{
-  	    height:224px;
+  	    height:226px;
 
     }
     
@@ -101,31 +120,31 @@
     flex-direction: wrap;
 
     align-items: center;
-    height: 200px;
-    margin-top: 200px;
+  /*  height: 200px;*/
+    margin-top: 150px;
     h2{
         position: relative;
         background-image: url('/Koukaki/wp-content/themes/foce-child/assets/images/Rectangle 23.png');
         width: 80%;
         text-align: left;
         display: block;
-        font-size: 42px;
+        font-size: 62px;
         font-weight: 700;
         line-height: 53px;
         letter-spacing: -0.02em;
         margin: 50px 0 50px 50px;
-        padding: 42px 100px 80px 120px;
+        padding: 62px 100px 80px 120px;
         &::before {
             content: url('/Koukaki/wp-content/themes/foce/assets/images/Sunflower.png');
             position: absolute;
-            animation:  flowerTurn 10000ms  linear infinite ;
+            animation:  flowerTurn var(--speed)  linear infinite ;
             left: 0em;
             bottom: 8em;
         }
         &::after {
         content: url('/Koukaki/wp-content/themes/foce/assets/images/orchid.png');
        position: absolute;
-       animation:  flowerTurn 10000ms  linear infinite ;
+       animation:  flowerTurn var(--speed)  linear infinite ;
         right: -13em;
         bottom: 8em;
     }}
@@ -137,25 +156,64 @@
 
 footer{animation: fade_in_2 2500ms ;
 	&:after{
-		animation:  flowerTurn 10000ms  linear infinite ;
+		animation:  flowerTurn var(--speed)  linear infinite ;
     }
     &:before{
-        animation: flowerTurn 10000ms  linear infinite;  
+        animation: flowerTurn var(--speed)  linear infinite;  
     }
 	ul{
 	&:after{
-		animation:  flowerTurn 10000ms  linear infinite ;
+		animation:  flowerTurn var(--speed)  linear infinite ;
     }
     &:before{
-        animation: flowerTurn 10000ms  linear infinite;  
+        animation: flowerTurn var(--speed)  linear infinite;  
     }
 	}
 }
 
 
+//video
+#background-video {
 
-     
-
+    object-fit: cover;
+   /* position: fixed;*/
+ 
+    }
+    @keyframes Parallaxe-effect {
+        0% {
+          transform: translate3d(8px,8px,0);
+        }
+        10% {
+          transform: translate3d(0px,8px,0px);
+        }
+        20% {
+          transform: translate3d(-4px,6px,0);
+        }
+        30% {
+          transform: translate3d(5px,0px,0);
+        }
+        40% {
+          transform: translate3d(-6px,-5px,0);
+        }
+        50% {
+          transform: translate3d(3px,-10px,0);
+        }
+        60% {
+          transform: translate3d(8px,-2px,0);
+        }
+        70% {
+          transform: translate3d(-4px,4px,0);
+        }
+        80% {
+          transform: translate3d(-2px,-7px,0);
+        }
+        90% {
+          transform: translate3d(7px,1px,0);
+        }
+        100% {
+          transform: translate3d(8px,8px,0); 
+        }
+      }
 
 
 
