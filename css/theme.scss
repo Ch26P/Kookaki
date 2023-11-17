@@ -75,18 +75,25 @@ animation:fade_scroll_title 1000ms ease-in-out;
  .banner{
     animation:fade_in_1 2500ms ;
     background-image: none;
+    min-height:0;
     &__logo{
        position:absolute;
-       animation:fade_in_title_site 2s 300ms ,Parallaxe-effect 8s  infinite ease-in-out;
+       animation:/*fade_in_title_site 2s 300ms ,*/Parallaxe-effect 8s  infinite ease-in-out;
      /*  opacity: 1;*/
+     max-width:max-content;
     }
     &__video{
-        position:absolute;
+      /*  position:absolute;*/
         opacity: 1;
     }
-    img{
-         width: auto;
-         max-width: 600px;
+    &__img{
+        // width: 100% !important;
+         //max-width: 100%;
+         position:absolute;
+         object-fit: cover;
+        /* max-width: 600px;*/
+        display:none;
+
     }
     
 }
@@ -122,6 +129,9 @@ animation:fade_scroll_title 1000ms ease-in-out;
     }
 
   }
+}
+#characters{
+  margin:50px 0 30px 0 !important; 
 }
 #studio{
 	h2{display: block;
@@ -201,7 +211,10 @@ footer{animation: fade_in_2 2500ms ;
 #background-video {
 
     object-fit: cover;
-
+   display: block;
+      width:100%;//
+    //  max-width:600px ;
+    
  
     }
     @keyframes Parallaxe-effect {
@@ -278,6 +291,7 @@ footer{animation: fade_in_2 2500ms ;
 /**header**/
 header{
   .main-navigation{
+  
     .menu{
       display: flex;
       justify-content: center;
@@ -294,7 +308,7 @@ header{
     }
     .burger_menu{
       overflow: hidden;
-      position: relative;
+      position: absolute;
        animation: fade_in_menu_toggle_in 2500ms forwards;
        transform: translateY(-1000px);
       /**/ display:none;
@@ -302,7 +316,7 @@ header{
       flex-direction: column;
       align-items: center;
       background-color: #FFF5E9;
-
+width: 100%;
 
       &_logo{
       /**/  width: 154.12px;
@@ -325,7 +339,7 @@ header{
           text-align: center;
           margin-bottom: 70px;/**/
           a {
-             animation:fade_scroll_title 1000ms ease-in-out;/**/}
+            /* animation:fade_scroll_title 1000ms ease-in-out;*/}
           a:hover {
            /* animation:fade_scroll_title 1000ms ease-in-out;*/
            text-shadow: #FF5C00 1px 0 10px;
@@ -445,16 +459,25 @@ header{
       }*/
     }
 
-header .main-navigation.toggled .burger_menu
+header {
+.main-navigation.toggled{ 
+  .menu-toggle{
+    .line{
+      position: absolute;
+    }
+  }
+  .burger_menu
 {
   
     animation: fade_in_menu_toggle 2500ms forwards;
     display: block;
     transform: translateY(0);
   text-align: center;
+ // position: absolute;
   
 }
-
+}
+}
 @keyframes X_menu_toggle{
   0% {
     transform: rotate(0);
@@ -490,3 +513,92 @@ header .main-navigation.toggled .burger_menu
     margin-block: 0px;
     
   }
+
+  /* @media */
+  @media all and (max-width: 1385px) {
+    #oscars {
+      h2{
+        font-size: 38px;
+        line-height:40px;
+      }
+     // 
+    }
+  }
+
+  @media all and (max-width: 1192px) {
+    #oscars {
+      h2{
+        font-size: 29px;
+        line-height:25px;
+      }
+    }
+  }
+  @media all and (max-width: 1040px) {
+    .banner__video 
+      {
+    //    display: none;
+    //  left: 33%;
+   //   top: 15em;
+    }
+    .banner__logo{
+      width: auto;
+      
+    }
+  
+  .oscars {
+    flex-direction: column;
+align-items: center;
+justify-content: center;
+
+
+    h2{
+     // font-size: 21px;
+    //  line-height:17px;
+    margin: 50px 0 0 0 ;
+    padding: 62px 200px 80px 200px;
+
+    &::before{
+      left:-110px ;
+    }
+    &::after{
+      right:-140px ;
+      bottom: -1px;
+    }
+    }
+    .oscars_img{
+      margin: 50px 0 0 0;
+    }
+  }
+  }
+  @media all and (max-width: 920px) {
+    #oscars {
+      h2{
+        // font-size: 21px;
+       //  line-height:17px;
+       margin: 50px 0 0 0 ;
+       padding: 62px 100px 80px 110px;
+    }
+  }}
+  
+  @media all and (max-width: 700px) {
+    #site-navigation {
+      .menu{
+      .site-title{
+        font-size: 17px;
+      }
+        .menu-toggle{
+         // right: 5px ;
+        }
+      }
+    }
+  //   width:auto;
+   //  max-width:none ;
+    
+    #oscars {
+      h2{
+         font-size: 19px;
+         line-height:17px;
+       margin: 50px 0 0 0 ;
+       padding: 62px 70px 80px 70px;
+    }
+  }}
