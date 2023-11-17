@@ -27,23 +27,26 @@
 
 	<header id="masthead" class="site-header">
 		<nav id="site-navigation" class="main-navigation">
-            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                <span id="line_1" class="line"></span>
-                <span id="line_2" class="line"></span>
-                <span id="line_3" class="line"></span>
-            </button>
+            <div class=menu>
+                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                    <span id="line_1" class="line"></span>
+                    <span id="line_2" class="line"></span>
+                    <span id="line_3" class="line"></span>
+                </button>
+            </div >
             <div class="burger_menu">
-               <img class="burger_menu_logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
-                <ul>
-                    <li class=story><a href="#story">Histoire</a></li>
+              
+                <ul class="burger_menu_list">
+                     <img class="burger_menu_logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+                    <li class=histoire><a href="#story">Histoire</a></li>
                     <li class=characteres><a href="#characters">Personnages</a></li>
                     <li class=place><a href="#place">Lieu</a></li>
                     <li class=studio><a href="#studio">Studio Koukaki</a></li>
                 </ul>
-                <div class="burger_menu_bottom">
-                    <a href="#">STUDIO KOUKAKI</a>
-                </div>
+                <ul class="burger_menu_bottom">
+                <li><a href="#">STUDIO KOUKAKI</a></li>
+                </ul>
             </div>
             
 		</nav><!-- #site-navigation -->

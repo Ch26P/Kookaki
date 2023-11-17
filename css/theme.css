@@ -45,14 +45,6 @@
     transform: translateY(0);
   }
 }
-@keyframes Translate_clouds {
-  0% {
-    transform: translatex(0);
-  }
-  100% {
-    transform: translatex(var(--mouv_clouds));
-  }
-}
 .title {
   display: block;
 }
@@ -66,6 +58,10 @@
 
 .site-main > section:not(.banner) {
   animation: fade_in_2 2500ms;
+}
+
+#primary {
+  overflow: hidden;
 }
 
 .banner {
@@ -110,7 +106,7 @@
   bottom: 400px;
 }
 .story #place img.clouds-animation {
-  animation: Translate_clouds 5000ms ease-in-out;
+  transform: translateX(var(--mouv_clouds));
 }
 
 #studio h2 {
@@ -129,9 +125,10 @@
 .oscars {
   display: flex;
   flex-direction: wrap;
+  /* overflow: hidden;*/
   align-items: center;
   /*  height: 200px;*/
-  margin-top: 150px;
+  margin-top: 50px;
 }
 .oscars h2 {
   position: relative;
@@ -151,14 +148,14 @@
   position: absolute;
   animation: flowerTurn var(--speed) linear infinite;
   left: 0em;
-  bottom: 8em;
+  bottom: 5em;
 }
 .oscars h2::after {
   content: url("/Koukaki/wp-content/themes/foce/assets/images/orchid.png");
   position: absolute;
   animation: flowerTurn var(--speed) linear infinite;
-  right: -13em;
-  bottom: 8em;
+  right: -10em;
+  bottom: 6em;
 }
 .oscars_img {
   margin: 0 250px 0 0;
@@ -170,14 +167,13 @@ footer {
 }
 footer:after {
   animation: flowerTurn var(--speed) linear infinite;
+  display: none;
 }
 footer:before {
   animation: flowerTurn var(--speed) linear infinite;
+  display: none;
 }
 footer ul:after {
-  animation: flowerTurn var(--speed) linear infinite;
-}
-footer ul:before {
   animation: flowerTurn var(--speed) linear infinite;
 }
 
@@ -224,7 +220,7 @@ footer ul:before {
 /**  carroussel**/
 html,
 .story__swiper {
-  position: relative !important;
+  position: relative;
   height: 100%;
 }
 
@@ -246,35 +242,52 @@ html,
   width: 100%;
 }
 
-/**header**/
-header .main-navigation h1 {
-  text-align: center;
-  justify-content: center;
+.swiper-pagination {
+  display: none;
 }
-header .main-navigation button {
-  display: contents;
+
+.swiper-slide-shadow-coverflow {
+  display: none;
+}
+
+/**header**/
+header .main-navigation .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .main-navigation .menu h1 {
+  text-align: center;
+  position: relative;
+}
+header .main-navigation .menu button {
+  display: block;
+  position: absolute;
+  right: 50px;
 }
 header .main-navigation .burger_menu {
   overflow: hidden;
   position: relative;
-  animation: fade_in_menu_toggle_in 2500ms;
+  animation: fade_in_menu_toggle_in 2500ms forwards;
   transform: translateY(-1000px);
+  /**/
   display: none;
   flex-direction: column;
   align-items: center;
   background-color: #FFF5E9;
 }
 header .main-navigation .burger_menu_logo {
+  /**/
   width: 154.12px;
   height: 95.36px;
   margin: 20px 0 70px 0;
-  animation: Parallaxe-effect 8s infinite ease-in-out;
+  /* animation:fade_in_title_site 2s 300ms, Parallaxe-effect 8s infinite ease-in-out;*/
 }
-header .main-navigation .burger_menu ul {
+header .main-navigation .burger_menu ul.burger_menu_list {
   display: flex;
   flex-direction: column;
 }
-header .main-navigation .burger_menu ul li {
+header .main-navigation .burger_menu ul.burger_menu_list li {
   font-family: Roboto Mono;
   font-size: 64px;
   font-weight: 400;
@@ -283,24 +296,22 @@ header .main-navigation .burger_menu ul li {
   text-align: center;
   margin-bottom: 70px; /**/
 }
-header .main-navigation .burger_menu ul li a {
-  animation: fade_scroll_title 1000ms ease-in-out;
+header .main-navigation .burger_menu ul.burger_menu_list li a {
+  animation: fade_scroll_title 1000ms ease-in-out; /**/
 }
-header .main-navigation .burger_menu ul li.story::before {
+header .main-navigation .burger_menu ul.burger_menu_list li a:hover {
+  /* animation:fade_scroll_title 1000ms ease-in-out;*/
+  text-shadow: #FF5C00 1px 0 10px;
+  color: #000;
+}
+header .main-navigation .burger_menu ul.burger_menu_list li.histoire::before {
   content: url("/Koukaki/wp-content/themes/foce/assets/images/orchid.png");
   position: absolute;
-  /*  width: 172.57px;
-    height: 168.24px;*/
   bottom: 30px;
   right: 780px;
-  /*
-                right:0px ;: calc(50% - 323px);
-                top: 0px;*/
-  /* z-index: 0;
-  animation: flowerTurn var(--speed)  linear infinite ;*/
   animation: flowerTurn var(--speed) linear infinite;
 }
-header .main-navigation .burger_menu ul li.story::after {
+header .main-navigation .burger_menu ul.burger_menu_list li.histoire::after {
   content: url("/Koukaki/wp-content/themes/foce/assets/images/Sunflower.png");
   position: absolute;
   left: 600px; /*: calc(50% - 323px);*/
@@ -309,43 +320,43 @@ header .main-navigation .burger_menu ul li.story::after {
   animation: flowerTurn var(--speed)  linear infinite ;*/
   animation: flowerTurn var(--speed) linear infinite;
 }
-header .main-navigation .burger_menu ul li.characteres::before {
-  content: url("/Koukaki/wp-content/themes/foce/assets/images/flower.png");
+header .main-navigation .burger_menu ul.burger_menu_list li.characteres::before {
+  content: url("/Koukaki/wp-content/themes/foce-child/assets/images/Flower_menu.png");
   position: absolute;
-  width: 70.76px;
-  height: 70.76px;
+  /*  width: 70.76px;
+    height: 70.76px;*/
   right: 0px;
   top: 0px;
   animation: flowerTurn var(--speed) linear infinite;
 }
-header .main-navigation .burger_menu ul li.characteres::after {
-  content: url("/Koukaki/wp-content/themes/foce/assets/images/random_flower.png");
+header .main-navigation .burger_menu ul.burger_menu_list li.characteres::after {
+  content: url("/Koukaki/wp-content/themes/foce-child/assets/images/Random Flower_menu.png");
   position: absolute;
   right: 0px;
   top: 0px;
   /* z-index: 0;*/
   animation: flowerTurn var(--speed) linear infinite;
 }
-header .main-navigation .burger_menu ul li.place::before {
+header .main-navigation .burger_menu ul.burger_menu_list li.place::before {
   content: url("../assets/images/cat_1.png");
   position: absolute;
   right: 600px;
   top: 200px;
   animation: Parallaxe-effect 11s infinite ease-in-out;
 }
-header .main-navigation .burger_menu ul li.place::after {
+header .main-navigation .burger_menu ul.burger_menu_list li.place::after {
   content: url("../assets/images/cat_2.png");
   position: absolute;
   right: 400px;
   bottom: 300px;
   animation: Parallaxe-effect 7s infinite ease-in-out;
 }
-header .main-navigation .burger_menu ul li.studio::after {
+header .main-navigation .burger_menu ul.burger_menu_list li.studio::after {
   content: url("../assets/images/cat_3.png");
   position: absolute;
   left: 600px;
   bottom: 100px;
-  animation: Parallaxe-effect 20s infinite ease-in-out;
+  animation: Parallaxe-effect 9s infinite ease-in-out;
 }
 header .main-navigation .burger_menu_bottom {
   text-align: center;
@@ -364,6 +375,7 @@ header .main-navigation .burger_menu_bottom::after {
   0% {
     transform: translateY(-800px);
     opacity: 0;
+    display: flex;
   }
   100% {
     transform: translateY(0);
@@ -374,20 +386,21 @@ header .main-navigation .burger_menu_bottom::after {
   0% {
     transform: translateY(0);
     opacity: 1;
-    display: block;
-  }
-  99% {
-    transform: translateY(-800px);
-    opacity: 0;
+    display: block; /**/
   }
   100% {
-    display: none;
-  }
+    transform: translateY(-800px);
+    opacity: 0;
+  } /*
+100%{
+  display:flex;
+}*/
 }
 header .main-navigation.toggled .burger_menu {
-  animation: fade_in_menu_toggle 2500ms;
+  animation: fade_in_menu_toggle 2500ms forwards;
   display: block;
   transform: translateY(0);
+  text-align: center;
 }
 
 @keyframes X_menu_toggle {

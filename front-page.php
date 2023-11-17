@@ -50,12 +50,12 @@ get_header();
 
 
         <article id="place">
-<img src="/Koukaki/wp-content/themes/foce-child/assets/images/big_cloud.png" alt="" class="Big_cloud">
+<img src="/Koukaki/wp-content/themes/foce-child/assets/images/big_cloud.png" alt="" class="Big_cloud clouds-animation">
             <div>
                 <h3 class="title"><span>Le Lieu</span></h3>
                 <p><?php echo get_theme_mod('place'); ?></p>
             </div>
-<img src="/Koukaki/wp-content/themes/foce-child/assets/images/little_cloud.png" alt="" class="Little_cloud">
+<img src="/Koukaki/wp-content/themes/foce-child/assets/images/little_cloud.png" alt="" class="Little_cloud clouds-animation">
         </article>
     </section>
     <section id="studio">
