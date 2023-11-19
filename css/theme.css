@@ -379,8 +379,8 @@ header .main-navigation .burger_menu_bottom::after {
   position: absolute;
   right: -300px; /*: calc(50% - 323px);*/
   top: 500px;
-  /* z-index: 0;
-  animation: flowerTurn var(--speed)  linear infinite ;*/
+  z-index: -1;
+  /*  animation: flowerTurn var(--speed)  linear infinite ;*/
   animation: flowerTurn var(--speed) linear infinite;
 }
 
@@ -409,9 +409,6 @@ header .main-navigation .burger_menu_bottom::after {
   display:flex;
 }*/
 }
-header .main-navigation.toggled .menu-toggle .line {
-  position: absolute;
-}
 header .main-navigation.toggled .burger_menu {
   animation: fade_in_menu_toggle 2500ms forwards;
   display: block;
@@ -439,7 +436,7 @@ header .main-navigation.toggled .burger_menu {
   margin-block: 0px;
 }*/
 .main-navigation.toggled #line_1 {
-  transform: rotate(45deg);
+  transform: translateY(1px) rotate(45deg);
   margin-block: 0px;
 }
 
@@ -449,7 +446,7 @@ header .main-navigation.toggled .burger_menu {
 }
 
 .main-navigation.toggled #line_3 {
-  transform: rotate(-45deg);
+  transform: translateY(-1px) rotate(-45deg);
   margin-block: 0px;
 }
 
