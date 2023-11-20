@@ -469,6 +469,12 @@ header .main-navigation.toggled .burger_menu li a {
   }
 }
 @media all and (max-width: 920px) {
+  .main-navigation.toggled .burger_menu ul.burger_menu_list li {
+    margin-bottom: 40px;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 60px;
+  }
   #oscars h2 {
     margin: 50px 0 0 0;
     padding: 62px 100px 80px 110px;
@@ -486,5 +492,17 @@ header .main-navigation.toggled .burger_menu li a {
     line-height: 17px;
     margin: 50px 0 0 0;
     padding: 62px 70px 80px 70px;
+  }
+  /**/
+  #banner .banner__video {
+    display: none;
+  }
+  #banner .banner__img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
+    width: 100%;
+    position: relative;
+    margin-top: 0px;
   }
 }/*# sourceMappingURL=theme.css.map */
