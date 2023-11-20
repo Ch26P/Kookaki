@@ -1,30 +1,30 @@
+let SpanPresent = document.querySelectorAll("#primary span")//recuperation des Span
+console.log(SpanPresent);
 
-/*let title = document.querySelectorAll(".title");*///recuperation des titres
- /*
 
-    for(let i=0;i<title.length;i++){ //boucle pour insersion liste
-let title_select=title[i]
-console.log(title_select)
-*/
+
+
+
 const observer = new IntersectionObserver(entries => {
 
     // Loop over the entries
     entries.forEach(entry => {
       // If the element is visible
-      if (entry.isIntersecting /*== observer*//*!= '#place'*/) {
-        // Add the animation class
-        entry.target.classList.add('title-animation');
-      }/*
-      else{
+      if (entry.isIntersecting ) {
+       
+        entry.target.classList.add('title-animation'); // Add the animation class
+      }
+      if (!entry.isIntersecting)
+      {
         entry.target.classList.remove('title-animation');
       }
-      */
+      
  });} );
   
  
   observer.observe(document.querySelector('.story .title'));
   observer.observe(document.querySelector('#studio .title'));
-  observer.observe(document.querySelector('.main-character .title'));/**/
+  observer.observe(document.querySelector('.main-character .title'));
  observer.observe(document.querySelector('#place .title'));
  observer.observe(document.querySelector('#oscars .title'));
 
@@ -59,18 +59,7 @@ console.log(horizontal);*/
 }, 500);});
 
 
-/*
 
-window.addEventListener("scroll", () => {
-  const declanche_clouds=1448;
- if(window.scrollY > declanche_clouds )  {
-
-
-    root.style.setProperty("--mouv_clouds", "300px");
-  }
-});
-
-(&(window.scrollY < 1948))*/
 
 //**script fermeture menu */
 const Burger= document.querySelector(".burger_menu");
@@ -78,16 +67,24 @@ console.log(Burger);
 // Burger.setAttribute("display", "block");changer src de l'image
 const Nav= document.querySelector("#site-navigation");
 console.log(Nav)
-let LiPresent = document.querySelectorAll(".burger_menu li a");//recuperation des a
-console.log(LiPresent);/**/
+let LienPresent = document.querySelectorAll(".burger_menu li a");//recuperation des a
+console.log(LienPresent);/**/
+/**/
 
-for (let i=0; i<LiPresent.length;i++){
-  let Liclick=LiPresent[i]
-  Liclick.addEventListener("click",(event)=>{
-    Li=event.target
-    if (Li)
+
+
+
+for (let i=0; i<LienPresent.length;i++){
+  let Lienclick=LienPresent[i]
+  Lienclick.addEventListener("click",(event)=>{
+    Lien=event.target
+    if (Lien)
 
     Nav.classList.remove("toggled");//Suppression d'une class
-   
+ 
    })
 }
+
+
+
+  

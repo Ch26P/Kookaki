@@ -18,7 +18,7 @@ get_header();
  
         <img class="banner__logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
 
-      <!--  <button id="btnVideo" onclick="playAndPause()">Pause II</button>-->
+      
 <div class="content">
         </div>
     </section>
