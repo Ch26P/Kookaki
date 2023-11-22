@@ -61,10 +61,12 @@ display: block;
   }
 }
 
-.title-animation span {
+.title-animation{
+
+ span {
 animation:fade_scroll_title 1000ms ease-in-out;
 }
-
+}
 
 .site-main >section:not(.banner){
   animation: fade_in_2 2500ms ;
@@ -87,6 +89,9 @@ overflow: hidden;
   &__video{
     position:relative;
       opacity: 1;
+      object-fit: cover;
+      display: block;
+         width:100%;
   }
   &__img{
        width: 100% !important;
@@ -112,8 +117,11 @@ h2{
           animation-fill-mode: forwards;
     }
 }
+#characters{
+  margin:50px 0 30px 0 !important; 
+  }
 #place{
-  background-image:url('/Koukaki/wp-content/themes/foce-child/assets/images/Studio_Koukaki-image_place.png') ;
+  background-image:url('../assets/images/Studio_Koukaki-image_place.png') ;
   img{
     position: absolute;
    filter:blur(1rem);
@@ -130,11 +138,33 @@ h2{
    }
   }
 
-}
-}
+}}
+#studio{
+  h2{
+    display: block;
+
+    &::after{
+      animation:  flowerTurn var(--speed)  linear infinite ;
+         
+    }
+    &::before{
+      animation: flowerTurn var(--speed)  linear infinite;  
+    }
+    }
+    div{
+        height:226px;
+  
+    }
+    
+  }
+  
+
+/*
 #characters{
 margin:50px 0 30px 0 !important; 
 }
+*/
+/*
 #studio{
 h2{display: block;
   &:after{
@@ -151,7 +181,7 @@ h2{display: block;
   }
   
 }
-
+*/
 .oscars{
   display: flex;
   flex-direction: wrap;
@@ -161,7 +191,7 @@ h2{display: block;
   margin-top: 50px;
   h2{
       position: relative;
-      background-image: url('/Koukaki/wp-content/themes/foce-child/assets/images/Rectangle 23.png');
+      background-image: url('../assets/images/Rectangle 23.png');
       width: 80%;
       text-align: left;
       display: block;
@@ -172,14 +202,14 @@ h2{display: block;
       margin: 50px 0 50px 50px;
       padding: 62px 100px 80px 120px;
       &::before {
-          content: url('/Koukaki/wp-content/themes/foce/assets/images/Sunflower.png');
+          content: url('../../foce/assets/images/Sunflower.png');//chemin relatif   non-conseiller
           position: absolute;
           animation:  flowerTurn var(--speed)  linear infinite ;
           left: 0em;
           bottom: 5em;
       }
       &::after {
-      content: url('/Koukaki/wp-content/themes/foce/assets/images/orchid.png');
+      content: url('/wp-content/themes/foce/assets/images/orchid.png');
      position: absolute;
      animation:  flowerTurn var(--speed)  linear infinite ;
       right: -10em;
@@ -192,7 +222,8 @@ h2{display: block;
   }}
 
 
-footer{animation: fade_in_2 2500ms ;
+footer{
+  animation: fade_in_2 2500ms ;
 &:after{
   animation:  flowerTurn var(--speed)  linear infinite ;
   display: none;
@@ -210,6 +241,7 @@ ul{
 
 
 //video
+/*
 #background-video {
 
   object-fit: cover;
@@ -217,7 +249,7 @@ ul{
     width:100%;
   
 
-  }
+  }*/
   @keyframes Parallaxe-effect {
       0% {
         transform: translate3d(8px,8px,0);
@@ -255,16 +287,17 @@ ul{
     }
 
 /**  carroussel**/
-
-  html,
- .story__swiper{
-  
-     position: relative ;
+/*
+html,
+.story__swiper{
+ 
+  position: relative ;
 height: 100%;
-  }
-
+ }
+*/
   .swiper {
     width: 100%;
+    max-width: 1440px;
     padding-top: 50px;
     padding-bottom: 50px;
   }
@@ -277,22 +310,26 @@ height: 100%;
   }
 
   .swiper-slide img {
-    display: block;
-    width: 100%;
+   // display: block;
+  //  width: 300px;
+  max-width: unset;
   }
-.swiper-pagination{
-display: none;
-}
+/*
 .swiper-slide-shadow-coverflow{
 display: none;
-}
+}*/
 
 
 
 /**header**/
 header{
+  &.full{
+    position:fixed;
+    left:0;
+    width: 100%;
+  }
 .main-navigation{
-
+height: 100%;
   .menu{
     display: flex;
     justify-content: center;
@@ -307,8 +344,9 @@ header{
         right: 50px;
       }
   }
-  .burger_menu{
-    overflow: hidden;
+  .burger_menu {
+   // overflow: hidden;
+    
     position: absolute;
      animation: fade_in_menu_toggle_in 2500ms forwards;
      transform: translateY(-1000px);
@@ -317,6 +355,8 @@ header{
     align-items: center;
     background-color: #FFF5E9;
 width: 100%;
+//height: 100%;
+
 
     &_logo{
       width: 154.12px;
@@ -327,6 +367,7 @@ width: 100%;
       &.burger_menu_list{    
       display: flex;
       flex-direction:column;
+      width: 100%;
       li{
         font-family: Roboto Mono;
         font-size: 64px;
@@ -335,6 +376,7 @@ width: 100%;
         letter-spacing: 0em;
         text-align: center;
         margin-bottom: 70px;
+        width: 100%;
         a {
           transform: translateY(200px);
         opacity: 0;
@@ -345,14 +387,14 @@ width: 100%;
         }
         &.histoire{
           &::before{
-            content: url("/Koukaki/wp-content/themes/foce/assets/images/orchid.png");
+            content: url("./assets/images/orchid.png");
             position: absolute;
             bottom: 30px;
             right: 780px;
            animation: flowerTurn var(--speed)  linear infinite;
           }
           &::after{
-            content: url("/Koukaki/wp-content/themes/foce/assets/images/Sunflower.png");
+            content:url("/wp-content/themes/foce/assets/images/Sunflower.png");
             position: absolute;
             left:600px ;
             bottom: 20px;
@@ -361,16 +403,16 @@ width: 100%;
           }
         }
           &.characteres{
-            &::before{
-              content: url("/Koukaki/wp-content/themes/foce/assets/images/flower.png");
+            ::before{
+              content:url("/wp-content/themes/foce/assets/images/flower.png");
               position: absolute;
           
               right:700px ;
               top: 100px;
              animation: flowerTurn var(--speed)  linear infinite;
             }
-            &::after{
-              content: url("/Koukaki/wp-content/themes/foce/assets/images/random_flower.png");
+            ::after{
+              content: url("/wp-content/themes/foce/assets/images/random_flower.png");
               position: absolute;
               left:830px ;
               top: -50px;
@@ -413,7 +455,7 @@ width: 100%;
       text-align: center;
       
         &::after{
-          content: url("/Koukaki/wp-content/themes/foce/assets/images/hibiscus_footer.png");
+          content: url('/wp-content/themes/foce/assets/images/hibiscus_footer.png');
           position: absolute;
           right:-300px ;
           top: 500px;
@@ -431,7 +473,7 @@ width: 100%;
 0% {
   transform: translateY(-800px);
   opacity: 0;
-  display: flex;
+ 
  
 }
 100% {
@@ -443,7 +485,7 @@ width: 100%;
   0% {
     transform: translateY(0);
     opacity: 1;
-    display:block;
+   
   }
   100% {
     transform: translateY(-800px);
@@ -451,38 +493,14 @@ width: 100%;
    
     }
   }
-
-header {
-.main-navigation.toggled{ 
-.burger_menu
-{
-  animation: fade_in_menu_toggle 2500ms forwards;
-  display: block;
-  transform: translateY(0);
-text-align: center;
-
-
-li{
-  a{
-    animation:fade_scroll_title 1000ms 2500ms forwards;
+  #myvideo:-webkit-full-screen {
+    width: 100%;
+    height: 100%;
   }
-}
-
-}
-}
-}
-@keyframes X_menu_toggle{
-0% {
-  transform: rotate(0);
-
-}
-100% {
-  transform: rotate(45deg);
- 
-  }
-
-}
-.main-navigation .line {
+  
+.main-navigation{
+ // height: 100%;
+   .line {
   height: 1px;
   background-color: #000;
   display: block;
@@ -490,20 +508,38 @@ li{
   margin-block: 7px;
   width: 30px;
 }
-.main-navigation.toggled #line_1 {
+&.toggled {
+  .burger_menu
+{
+  animation: fade_in_menu_toggle 1000ms forwards;
+  display: flex;//
+//  transform: translateY(0);
+text-align: center;
+width: 100%;
+height: 100%;
+position:fixed;
+left: 0;
+li{
+  a{
+    animation:fade_scroll_title 1000ms 1000ms forwards;
+  }
+}
+
+}
+  #line_1 {
   transform: translateY(1px) rotate(45deg);
   margin-block: 0px;
 }
-.main-navigation.toggled #line_2 {
+ #line_2 {
   opacity:0;
   margin-block: 0px;
 }
-.main-navigation.toggled #line_3{
+ #line_3{
   transform: translateY(-1px) rotate(-45deg);
   margin-block: 0px;
   
+}}
 }
-
 /* @media */
 @media all and (max-width: 1385px) {
   #oscars {

@@ -8,54 +8,44 @@ get_header();
 
 
     <section id="banner" class="banner">
-    <img class="banner__img" src="<?php echo get_template_directory_uri() .'/assets/images/banner.png'; ?> " alt="">
+        <img class="banner__img" src="<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?> " alt="">
         <video class=banner__video id="background-video" autoplay loop muted>
 
-             <source src="https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/DWP+IW_P9+Studio+d'animation/Studio+Koukaki-vide%CC%81o+header+sans+son+(1).mp4" type="video/mp4">
+            <source src="https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/DWP+IW_P9+Studio+d'animation/Studio+Koukaki-vide%CC%81o+header+sans+son+(1).mp4" type="video/mp4">
 
         </video>
-         
- 
+
+
         <img class="banner__logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
 
-      
-<div class="content">
+
+        <div class="content">
         </div>
     </section>
     <section id="#story" class="story">
         <h2 class="title"><span>L'histoire</span></h2>
         <article id="" class="story__article">
-        <p><?php echo get_theme_mod('story'); ?></p>
+            <p><?php echo get_theme_mod('story'); ?></p>
         </article>
-        
-        
-       
-        
-        <?php
-        $args = array(
-            'post_type' => 'characters',
-            'posts_per_page' => -1,
-            'meta_key'  => '_main_char_field',
-            'orderby'   => 'meta_value_num',
 
-        );
-        $characters_query = new WP_Query($args);
-        ?>
+
+
+
         <article id="characters">
             <div class="main-character">
                 <h3 class=title><span>Les personnages</span></h3>
-               <?php  get_template_part( 'template-parts/content-Perso-carroussel' ); ?>
+                <?php get_template_part('template-parts/content-Perso-carroussel'); ?>
             </div>
         </article>
 
 
         <article id="place">
-<img src="/Koukaki/wp-content/themes/foce-child/assets/images/big_cloud.png" alt="" class="Big_cloud clouds-animation">
+            <img src="./wp-content/themes/foce-child/assets/images/big_cloud.png" alt="" class="Big_cloud clouds-animation">
             <div>
                 <h3 class="title"><span>Le Lieu</span></h3>
                 <p><?php echo get_theme_mod('place'); ?></p>
             </div>
-<img src="/Koukaki/wp-content/themes/foce-child/assets/images/little_cloud.png" alt="" class="Little_cloud clouds-animation">
+            <img src="./wp-content/themes/foce-child/assets/images/little_cloud.png" alt="" class="Little_cloud clouds-animation">
         </article>
     </section>
     <section id="studio">
@@ -65,7 +55,7 @@ get_header();
             <p>Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
         </div>
     </section>
-   <?php  get_template_part( 'template-parts/content-oscars' ); ?>
+    <?php get_template_part('template-parts/content-oscars'); ?>
 
 
 
