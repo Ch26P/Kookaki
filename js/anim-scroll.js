@@ -72,23 +72,22 @@ for (let i = 0; i < LienPresent.length; i++) {
 
       Nav.classList.remove("toggled");//Suppression d'une class
       Siteheader.classList.remove("full");
-      Burger.setAttribute( 'aria-expanded', 'false' );
+      Burger.setAttribute('aria-expanded', 'false');
     }
   })
 
 }
 for (let a = 0; a < 2; a++) {
 
-//  let Burgerclick = Burger
   Burger.addEventListener('click', function () {
     Nav.classList.toggle('toggled');
 
     if (Burger.getAttribute('aria-expanded') === 'true') {
       Siteheader.classList.remove("full");
-      a=0;
+      a = 0;
     } else {
       Siteheader.classList.add("full");
-      a=1;
+      a = 1;
     }
   });
 }

@@ -210,7 +210,7 @@
     }
 
     &::after {
-      content: url('../../foce/assets/images/orchid.png');
+      content: url('../assets/images/orchid.png');
       position: absolute;
       animation: flowerTurn var(--speed) linear infinite;
       right: -10em;
@@ -389,7 +389,7 @@ header {
 
             &.histoire {
               &::before {
-                content: url("../../foce/assets/images/orchid.png");
+                content: url("../assets/images/orchid.png");
                 position: absolute;
                 bottom: 30px;
                 left: -65px;
@@ -398,7 +398,7 @@ header {
               }
 
               &::after {
-                content: url("../../foce/assets/images/Sunflower.png");
+                content: url("../assets/images/Sunflower.png");
                 position: absolute;
                 right: 400px;
                 bottom: 20px;
@@ -409,7 +409,7 @@ header {
 
             &.characteres {
               &::before {
-                content: url("../../foce/assets/images/flower.png");
+                content: url("../assets/images/flower.png");
                 position: absolute;
 
                 left: 300px;
@@ -418,7 +418,7 @@ header {
               }
 
               &::after {
-                content: url("../../foce/assets/images/random_flower.png");
+                content: url("../assets/images/random_flower.png");
                 position: absolute;
                 right: -75px;
                 top: 0px;
@@ -468,7 +468,7 @@ header {
         text-align: center;
 
         &::after {
-          content: url('../../foce/assets/images/hibiscus_footer.png');
+          content: url('../assets/images/hibiscus_footer.png');
           position: absolute;
           right: -300px;
           top: 500px;
