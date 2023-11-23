@@ -1,6 +1,6 @@
 :root {
   --speed: 10000ms;
-  --mouv_clouds:0px;
+  --mouv_clouds: 0px;
 }
 
 @keyframes flowerTurn {
@@ -132,32 +132,8 @@
   height: 226px;
 }
 
-/*
-#characters{
-margin:50px 0 30px 0 !important; 
-}
-*/
-/*
-#studio{
-h2{display: block;
-  &:after{
-    animation:  flowerTurn var(--speed)  linear infinite ;
-
-  }
-  &:before{
-    animation: flowerTurn var(--speed)  linear infinite;  
-  }
-  }
-  div{
-      height:226px;
-
-  }
-
-}
-*/
 .oscars {
   display: flex;
-  flex-direction: wrap;
   align-items: center;
   margin-top: 50px;
 }
@@ -182,7 +158,7 @@ h2{display: block;
   bottom: 5em;
 }
 .oscars h2::after {
-  content: url("/wp-content/themes/foce/assets/images/orchid.png");
+  content: url("../../foce/assets/images/orchid.png");
   position: absolute;
   animation: flowerTurn var(--speed) linear infinite;
   right: -10em;
@@ -208,15 +184,6 @@ footer ul:after {
   animation: flowerTurn var(--speed) linear infinite;
 }
 
-/*
-#background-video {
-
-  object-fit: cover;
- display: block;
-    width:100%;
-
-
-  }*/
 @keyframes Parallaxe-effect {
   0% {
     transform: translate3d(8px, 8px, 0);
@@ -253,14 +220,6 @@ footer ul:after {
   }
 }
 /**  carroussel**/
-/*
-html,
-.story__swiper{
-
-  position: relative ;
-height: 100%;
- }
-*/
 .swiper {
   width: 100%;
   max-width: 1440px;
@@ -279,10 +238,6 @@ height: 100%;
   max-width: unset;
 }
 
-/*
-.swiper-slide-shadow-coverflow{
-display: none;
-}*/
 /**header**/
 header.full {
   position: fixed;
@@ -301,7 +256,7 @@ header .main-navigation .menu h1 {
   text-align: center;
   position: relative;
 }
-header .main-navigation .menu button {
+header .main-navigation .menu .menu-toggle {
   display: block;
   position: absolute;
   right: 50px;
@@ -345,59 +300,64 @@ header .main-navigation .burger_menu ul.burger_menu_list li a:hover {
   color: #000;
 }
 header .main-navigation .burger_menu ul.burger_menu_list li.histoire::before {
-  content: url("./assets/images/orchid.png");
+  content: url("../../foce/assets/images/orchid.png");
   position: absolute;
   bottom: 30px;
-  right: 780px;
+  left: -65px;
   animation: flowerTurn var(--speed) linear infinite;
+  z-index: -3;
 }
 header .main-navigation .burger_menu ul.burger_menu_list li.histoire::after {
-  content: url("/wp-content/themes/foce/assets/images/Sunflower.png");
+  content: url("../../foce/assets/images/Sunflower.png");
   position: absolute;
-  left: 600px;
+  right: 400px;
   bottom: 20px;
   animation: flowerTurn var(--speed) linear infinite;
+  z-index: -1;
 }
-header .main-navigation .burger_menu ul.burger_menu_list li.characteres ::before {
-  content: url("/wp-content/themes/foce/assets/images/flower.png");
+header .main-navigation .burger_menu ul.burger_menu_list li.characteres::before {
+  content: url("../../foce/assets/images/flower.png");
   position: absolute;
-  right: 700px;
+  left: 300px;
   top: 100px;
   animation: flowerTurn var(--speed) linear infinite;
 }
-header .main-navigation .burger_menu ul.burger_menu_list li.characteres ::after {
-  content: url("/wp-content/themes/foce/assets/images/random_flower.png");
+header .main-navigation .burger_menu ul.burger_menu_list li.characteres::after {
+  content: url("../../foce/assets/images/random_flower.png");
   position: absolute;
-  left: 830px;
-  top: -50px;
+  right: -75px;
+  top: 0px;
   animation: flowerTurn var(--speed) linear infinite;
+  z-index: -2;
 }
 header .main-navigation .burger_menu ul.burger_menu_list li.place::before {
   content: url("../assets/images/cat_1.png");
   position: absolute;
-  right: 600px;
+  left: 200px;
   top: 200px;
   animation: Parallaxe-effect 11s infinite ease-in-out;
 }
 header .main-navigation .burger_menu ul.burger_menu_list li.place::after {
   content: url("../assets/images/cat_2.png");
   position: absolute;
-  right: 400px;
+  left: 400px;
   bottom: 300px;
   animation: Parallaxe-effect 7s infinite ease-in-out;
+  z-index: -2;
 }
 header .main-navigation .burger_menu ul.burger_menu_list li.studio::after {
   content: url("../assets/images/cat_3.png");
   position: absolute;
-  left: 600px;
-  bottom: 100px;
+  right: 400px;
+  bottom: 80px;
   animation: Parallaxe-effect 9s infinite ease-in-out;
+  z-index: -3;
 }
 header .main-navigation .burger_menu_bottom {
   text-align: center;
 }
 header .main-navigation .burger_menu_bottom::after {
-  content: url("/wp-content/themes/foce/assets/images/hibiscus_footer.png");
+  content: url("../../foce/assets/images/hibiscus_footer.png");
   position: absolute;
   right: -300px;
   top: 500px;
@@ -425,11 +385,6 @@ header .main-navigation .burger_menu_bottom::after {
     opacity: 0;
   }
 }
-#myvideo:-webkit-full-screen {
-  width: 100%;
-  height: 100%;
-}
-
 .main-navigation .line {
   height: 1px;
   background-color: #000;
@@ -522,7 +477,6 @@ header .main-navigation .burger_menu_bottom::after {
     margin: 50px 0 0 0;
     padding: 62px 70px 80px 70px;
   }
-  /**/
   #banner .banner__video {
     display: none;
   }

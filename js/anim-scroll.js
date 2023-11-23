@@ -40,15 +40,13 @@ window.addEventListener("scroll", () => {
       /* console.log(vertical);*/
       root.style.setProperty("--speed", "3000ms");
 
-    } /**/
+    }
     else {
       root.style.setProperty("--speed", "12000ms");
     }
 
     if (window.scrollY > declanche_clouds & window.scrollY < declanche_clouds2) {
       horizontal = Math.round(300 - (((1948 - window.scrollY) / 5) * 3));
-      /*console.log(vertical);
-      console.log(horizontal);*/
       root.style.setProperty("--mouv_clouds", "-" + horizontal + "px");
     }
   }, 500);
@@ -62,7 +60,6 @@ console.log(LienPresent);/**/
 const Burger = document.querySelector(".menu-toggle");
 console.log(Burger);
 const Siteheader = document.querySelector(".site-header");
-// Burger.setAttribute("display", "block");changer src de l'image
 const Nav = document.querySelector("#site-navigation");
 console.log(Nav)
 
